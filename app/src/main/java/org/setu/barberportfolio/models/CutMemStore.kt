@@ -15,4 +15,27 @@ class CutMemStore {
         cuts.add(cut)
     }
 
+    fun findOne(id: Long): CutStyle? {
+        return cuts.find{p-> p.id == id}
+    }
+    fun update(cut: CutStyle): Boolean{
+        val foundCut = findOne(cut.id)
+        return if(foundCut!=null){
+            foundCut.styleName=cut.styleName
+            foundCut.notes= cut.notes
+            foundCut.date=cut.date
+            true
+        }else{
+        false }
+    }
+    fun delete(id: Long): Boolean{
+        val foundCut = findOne(id)
+        return if (foundCut!= null){
+            cuts.remove(foundCut)
+            true
+        }else{
+            false
+        }
+    }
+
 }
