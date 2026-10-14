@@ -20,6 +20,12 @@
             android:id="@+id/addCutButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="Addcut" />
+
+        <Button
+            android:id="@+id/viewCutButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="view Cut" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

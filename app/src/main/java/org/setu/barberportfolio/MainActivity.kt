@@ -16,6 +16,9 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.addCutButton).setOnClickListener {
             startActivity(Intent(this, AddCutActivity::class.java))
         }
+        findViewById<Button>(R.id.viewCutButton).setOnClickListener {
+            startActivity(Intent(this, CutListActivity::class.java))
+        }
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)

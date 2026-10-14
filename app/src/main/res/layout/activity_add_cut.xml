@@ -20,20 +20,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="Style Name"
             android:inputType="text"
-            android:text="Style name"
-            android:minHeight="48dp"
 
-            />
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/notesInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="Notes"
             android:inputType="text"
-            android:text="Notes"
-            android:minHeight="48dp"/>
+            android:minHeight="48dp" />
 
         <Button
             android:id="@+id/saveButton"

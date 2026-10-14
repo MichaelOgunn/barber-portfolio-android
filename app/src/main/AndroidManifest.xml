@@ -24,6 +24,9 @@
         <activity
             android:name=".AddCutActivity"
             android:exported="false" />
+        <activity
+            android:name=".CutListActivity"
+            android:exported="false" />
 
     </application>
 
