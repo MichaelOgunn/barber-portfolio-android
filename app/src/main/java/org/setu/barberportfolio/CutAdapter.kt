@@ -20,8 +20,8 @@ class CutAdapter (
         private val notesText: TextView = itemView.findViewById(R.id.notesText)
         private val dateText: TextView = itemView.findViewById(R.id.dateText)
         private val  dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
-        val editButton: TextView = itemView.findViewById(R.id.editButton)
-        val deleteButton: TextView = itemView.findViewById(R.id.deleteButton)
+//        val editButton: TextView = itemView.findViewById(R.id.editButton)
+//        val deleteButton: TextView = itemView.findViewById(R.id.deleteButton)
         fun bind(cut: CutStyle) {
             // Bind the data to the views in the item layout
 
@@ -41,12 +41,12 @@ class CutAdapter (
         // Bind the data to the ViewHolder
         val cut = cuts[position]
         holder.bind(cut)
-    holder.editButton.setOnClickListener {
-        onEdit(cut)
-    }
-    holder.deleteButton.setOnClickListener {
-        onDelete(cut)
-    }
+//    holder.editButton.setOnClickListener {
+//        onEdit(cut)
+//    }
+//    holder.deleteButton.setOnClickListener {
+//        onDelete(cut)
+//    }
     }
 
     override fun getItemCount(): Int {

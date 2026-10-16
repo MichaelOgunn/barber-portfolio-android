@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.RemoteInput
 import org.setu.barberportfolio.models.CutStyle
+import timber.log.Timber
 
 class AddCutActivity: AppCompatActivity() {
     private lateinit var styleName: EditText
@@ -34,13 +35,16 @@ class AddCutActivity: AppCompatActivity() {
 
     }
     private fun savecut() {
+
         val styleNameText = styleName.text.toString()
         val notesText = notes.text.toString()
+        Timber.d("Creating cut: ${styleNameText}")
 
         if (styleNameText.isNotEmpty()) {
             if (editingId == null) {
                 AppData.cutStyle.create(CutStyle(styleName = styleNameText, notes = notesText))
             } else {
+                Timber.d("Updating cut id=$editingId: ${styleNameText}")
                 AppData.cutStyle.update(CutStyle(id = editingId!!, styleName = styleNameText, notes = notesText))
             }
             finish()
