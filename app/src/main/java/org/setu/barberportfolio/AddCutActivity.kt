@@ -9,7 +9,7 @@ import androidx.core.app.RemoteInput
 import org.setu.barberportfolio.models.CutStyle
 import timber.log.Timber
 
-class AddCutActivity: AppCompatActivity() {
+class AddCutActivity: BaseActivity() {
     private lateinit var styleName: EditText
     private lateinit var notes: EditText
     private var editingId: Long? = null

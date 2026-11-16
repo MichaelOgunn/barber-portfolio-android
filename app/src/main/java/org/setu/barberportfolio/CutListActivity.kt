@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import org.setu.barberportfolio.models.CutStyle
 import timber.log.Timber
 
-class CutListActivity : AppCompatActivity() {
+class CutListActivity : BaseActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: CutAdapter
