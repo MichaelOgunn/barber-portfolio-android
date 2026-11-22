@@ -7,5 +7,6 @@ data class CutStyle (
     var id: Long = 0L,
     var styleName: String ="",
     var notes: String ="",
-    var date: Date = Date()
+    var date: Date = Date(),
+    var imageUri: String? = null
 )

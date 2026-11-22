@@ -24,6 +24,7 @@ class CutMemStore {
             foundCut.styleName=cut.styleName
             foundCut.notes= cut.notes
             foundCut.date=cut.date
+            foundCut.imageUri= cut.imageUri
             true
         }else{
         false }
