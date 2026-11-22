@@ -51,6 +51,13 @@ class AddCutActivity: BaseActivity() {
             if (cut != null) {
                 styleName.setText(cut.styleName)
                 notes.setText(cut.notes)
+                //restoring photo if it exists
+                selectedImageUri = cut.imageUri?.let { Uri.parse(it) }
+                if(selectedImageUri != null) {
+                    imagePreview.setImageURI(selectedImageUri)
+                }else{
+                    imagePreview.setImageResource(android.R.drawable.ic_menu_gallery)
+                }
             }
         }
 
@@ -64,12 +71,13 @@ class AddCutActivity: BaseActivity() {
         val notesText = notes.text.toString()
         Timber.d("Creating cut: ${styleNameText}")
 
+
         if (styleNameText.isNotEmpty()) {
             if (editingId == null) {
-                AppData.cutStyle.create(CutStyle(styleName = styleNameText, notes = notesText))
+                AppData.cutStyle.create(CutStyle(styleName = styleNameText, notes = notesText, imageUri = selectedImageUri?.toString()))
             } else {
                 Timber.d("Updating cut id=$editingId: ${styleNameText}")
-                AppData.cutStyle.update(CutStyle(id = editingId!!, styleName = styleNameText, notes = notesText))
+                AppData.cutStyle.update(CutStyle(id = editingId!!, styleName = styleNameText, notes = notesText, imageUri = selectedImageUri?.toString()))
             }
             finish()
         } else {
