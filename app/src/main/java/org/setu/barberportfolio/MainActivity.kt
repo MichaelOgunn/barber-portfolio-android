@@ -18,7 +18,7 @@ class MainActivity : BaseActivity() {
         findViewById<Button>(R.id.addCutButton).setOnClickListener {
             startActivity(Intent(this, AddCutActivity::class.java))
         }
-        findViewById<Button>(R.id.viewCutButton).setOnClickListener {
+        findViewById<Button>(R.id.viewCutsButton).setOnClickListener {
             startActivity(Intent(this, CutListActivity::class.java))
         }
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

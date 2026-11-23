@@ -1,9 +1,11 @@
 package org.setu.barberportfolio
 
 import android.icu.text.SimpleDateFormat
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import org.setu.barberportfolio.models.CutStyle
@@ -12,7 +14,8 @@ import java.util.Locale
 class CutAdapter (
     private var cuts: List<CutStyle>,
     private val onEdit: ((CutStyle) -> Unit),
-    private val onDelete: ((CutStyle) -> Unit)
+    private val onDelete: ((CutStyle) -> Unit),
+
 
     ): RecyclerView.Adapter<CutAdapter.CutViewHolder>() {
     class CutViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -20,7 +23,9 @@ class CutAdapter (
         private val notesText: TextView = itemView.findViewById(R.id.notesText)
         private val dateText: TextView = itemView.findViewById(R.id.dateText)
         private val  dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
-//        val editButton: TextView = itemView.findViewById(R.id.editButton)
+        private val cutImage : ImageView = itemView.findViewById(R.id.cutImage)
+
+        //        val editButton: TextView = itemView.findViewById(R.id.editButton)
 //        val deleteButton: TextView = itemView.findViewById(R.id.deleteButton)
         fun bind(cut: CutStyle) {
             // Bind the data to the views in the item layout
@@ -28,6 +33,12 @@ class CutAdapter (
             styleNameText.text = cut.styleName
             notesText.text = cut.notes
             dateText.text = dateFormat.format(cut.date)
+            val imageUri = cut.imageUri?.let { Uri.parse(it) }
+            if (imageUri != null) {
+                cutImage.setImageURI(imageUri)
+            } else {
+                cutImage.setImageResource(android.R.drawable.ic_menu_gallery)
+            }
         }
     }
 
@@ -41,6 +52,7 @@ class CutAdapter (
         // Bind the data to the ViewHolder
         val cut = cuts[position]
         holder.bind(cut)
+
 //    holder.editButton.setOnClickListener {
 //        onEdit(cut)
 //    }
