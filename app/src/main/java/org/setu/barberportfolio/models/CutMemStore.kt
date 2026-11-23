@@ -25,6 +25,8 @@ class CutMemStore {
             foundCut.notes= cut.notes
             foundCut.date=cut.date
             foundCut.imageUri= cut.imageUri
+            foundCut.latitude= cut.latitude
+            foundCut.longitude= cut.longitude
             true
         }else{
         false }
