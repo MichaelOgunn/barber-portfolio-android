@@ -8,5 +8,7 @@ data class CutStyle (
     var styleName: String ="",
     var notes: String ="",
     var date: Date = Date(),
-    var imageUri: String? = null
+    var imageUri: String? = null,
+    var latitude: Double? = null,
+    var longitude: Double? = null
 )
